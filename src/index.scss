@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@import url("https://db.onlinewebfonts.com/c/f38da0f7340f0f57c58f17fdd59be485?family=Axiforma+W05+Bold");
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: "Satoshi", sans-serif;
+  @apply bg-main-bg bg-left-bottom bg-fixed bg-no-repeat bg-cover;
+}
+
+section,
+header {
+  @apply p-4 md:py-10 md:px-[8rem];
+}
+
+.hero {
+  @apply md:bg-[url("/assets/hero-image.png")] h-[82vh] bg-no-repeat bg-right-bottom;
+}
+
+.about{
+  @apply h-screen bg-[url("/assets/about-image.png")] bg-no-repeat bg-contain bg-bottom md:bg-right;
+}
