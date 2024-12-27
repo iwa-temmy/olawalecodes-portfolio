@@ -5,7 +5,23 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        sm: '1rem',
+        md: '8.5rem',
+        lg: '8.5rem',
+        xl: '8.5rem',
+        '2xl': '8.5rem',
+      },
+      margin: {
+        sm: '0rem',
+      }
+    },
     extend: {
+      backgroundColor: {
+        "dark": "#111111"
+      },
       backgroundImage: {
         'main-bg': "url('/assets/background.png')",
       },

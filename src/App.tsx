@@ -3,6 +3,7 @@ import Hero from "./components/hero";
 import About from "./components/about";
 import NavBar from "./components/ui/navbar";
 import "./App.css";
+import Contact from "./components/contact";
 
 function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
       <NavBar />
       <Hero />
       <About />
+      <Contact />
     </div>
   );
 }
