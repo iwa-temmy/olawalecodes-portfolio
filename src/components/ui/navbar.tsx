@@ -2,8 +2,8 @@ import Icon from "./icon";
 
 const NavBar = () => {
   return (
-    <header className="flex justify-between fixed w-full top-0">
-      <div className="flex items-center gap-12">
+    <header className="flex flex-1  fixed mx-auto  max-w-7xl w-full">
+      <div className="flex items-center w-full gap-12">
         <h1 className="bg-transparent p-2 md:bg-[#1F1F1F]">
           <img src="/assets/logo.svg" alt="Olawalecode's logo" />
         </h1>
@@ -17,7 +17,7 @@ const NavBar = () => {
           <li>Works</li>
         </ul>
       </div>
-      <button className="bg-white hidden md:flex gap-2 px-6 py-3 rounded-lg font-black items-center text-[#1F1F1F]">
+      <button className="bg-white hidden md:flex gap-2 px-6 py-3 rounded-lg font-black whitespace-nowrap items-center text-[#1F1F1F]">
         Download CV <Icon icon="basil:download" className="text-lg" />
       </button>
       <button className="block md:hidden">

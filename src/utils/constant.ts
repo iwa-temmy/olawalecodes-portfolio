@@ -63,8 +63,8 @@ export const contactInfo = [
   },
   {
     icon: LocationMarker,
-    url: "www.google.com",
-    label: "Ipaja, Lagos State, Nigeria",
+    url: "https://maps.app.goo.gl/TQL4TF9fgd4R9eDU9",
+    label: "Lagos State, Nigeria",
     type: "location",
   },
   {

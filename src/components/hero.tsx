@@ -3,7 +3,7 @@ import { tools } from "../utils/constant";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col justify-center hero md:justify-start items-center md:items-start container mt-40">
+    <section className="hero">
       <img
         src="/assets/olawale.png"
         className="w-[78px] h-[78px] block md:hidden object-contain rounded-full bg-[#ffffff50]"

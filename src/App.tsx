@@ -1,27 +1,17 @@
-import { useEffect } from "react";
 import Hero from "./components/hero";
 import About from "./components/about";
 import NavBar from "./components/ui/navbar";
 import "./App.css";
 import Contact from "./components/contact";
+import SelectedWorks from "./components/selected-works";
 
 function App() {
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      console.log("current position", window.scrollY);
-      const sections = document.getElementsByTagName("section");
-      console.log("sections", sections);
-    });
-    return () =>
-      window.removeEventListener("scroll", () =>
-        console.log("stopped scrolling")
-      );
-  }, []);
   return (
-    <div className="h-screen bg-left-bottom md:bg-center bg-cover">
+    <div className="page-layout">
       <NavBar />
       <Hero />
       <About />
+      <SelectedWorks />
       <Contact />
     </div>
   );
