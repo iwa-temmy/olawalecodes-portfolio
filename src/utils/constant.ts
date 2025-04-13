@@ -74,3 +74,70 @@ export const contactInfo = [
     type: "phone",
   },
 ];
+
+export const projects = [
+  {
+    id: 1,
+    title: "Smartcomply website",
+    image: "/assets/placeholder.png",
+    description:
+      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+    tools: ["Next JS", "Tailwind", "Framer motion"],
+  },
+  {
+    id: 2,
+    title: "Smartcomply website",
+    image: "/assets/placeholder.png",
+    description:
+      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+    tools: ["Next JS", "Tailwind", "Framer motion"],
+  },
+  {
+    id: 3,
+    image: "/assets/placeholder.png",
+    title: "Now Smartcomply website",
+    description:
+      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+    tools: ["Next JS", "Tailwind", "Framer motion"],
+  },
+  {
+    id: 4,
+    image: "/assets/placeholder.png",
+    title: "Not Smartcomply website",
+    description:
+      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+    tools: ["Next JS", "Tailwind", "Framer motion"],
+  },
+  {
+    id: 5,
+    image: "/assets/placeholder.png",
+    title: "Yay Smartcomply website",
+    description:
+      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+    tools: ["Next JS", "Tailwind", "Framer motion"],
+  },
+  {
+    id: 6,
+    image: "/assets/placeholder.png",
+    title: "Ni Smartcomply website",
+    description:
+      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+    tools: ["Next JS", "Tailwind", "Framer motion"],
+  },
+  {
+    id: 7,
+    image: "/assets/placeholder.png",
+    title: "Han Smartcomply website",
+    description:
+      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+    tools: ["Next JS", "Tailwind", "Framer motion"],
+  },
+  {
+    id: 8,
+    image: "/assets/placeholder.png",
+    title: "Dan Smartcomply website",
+    description:
+      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+    tools: ["Next JS", "Tailwind", "Framer motion"],
+  },
+];

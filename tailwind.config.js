@@ -8,11 +8,10 @@ export default {
     container: {
       center: true,
       padding: {
-        sm: '1rem',
-        md: '8.5rem',
-        lg: '8.5rem',
-        xl: '8.5rem',
-        '2xl': '8.5rem',
+        sm: '2rem',
+        md: '1rem',
+        lg: '1rem',
+        xl: '4rem',
       },
       margin: {
         sm: '0rem',

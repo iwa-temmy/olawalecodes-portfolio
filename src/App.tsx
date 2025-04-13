@@ -7,13 +7,15 @@ import SelectedWorks from "./components/selected-works";
 
 function App() {
   return (
-    <div className="page-layout">
-      <NavBar />
-      <Hero />
-      <About />
-      <SelectedWorks />
-      <Contact />
-    </div>
+    <>
+      <div className="">
+        <NavBar />
+        <Hero />
+        <About />
+        <SelectedWorks />
+        <Contact />
+      </div>
+    </>
   );
 }
 
