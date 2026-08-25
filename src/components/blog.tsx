@@ -1,14 +1,14 @@
 import { useTransition, animated } from "@react-spring/web";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import ProjectCard from "./ui/project-card";
-import { projects } from "../utils/constant";
+import BlogCard from "./ui/blog-card";
+import { blogs } from "../utils/constant";
 import { usePagination } from "../utils/use-pagination";
 
 const PER_PAGE = 2;
 
-const SelectedWorks = () => {
+const Blog = () => {
   const { page, totalPages, direction, next, prev } = usePagination(
-    projects.length,
+    blogs.length,
     PER_PAGE
   );
 
@@ -25,10 +25,10 @@ const SelectedWorks = () => {
   });
 
   return (
-    <section className="selected-works" id="works">
+    <section className="blog" id="blog">
       <div className="flex flex-col gap-5 items-center pb-4">
         <h1 className="text-white/30 text-center text-3xl md:text-7xl font-black">
-          Selected works
+          Blog
         </h1>
         <div className="bg-[#212121] h-2 w-44 rounded-3xl">
           <div className="bg-white w-1/2 h-full rounded-3xl" />
@@ -40,17 +40,17 @@ const SelectedWorks = () => {
             style={style}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
           >
-            {projects
+            {blogs
               .slice((item - 1) * PER_PAGE, item * PER_PAGE)
-              .map((project) => (
-                <ProjectCard key={project.id} project={project} />
+              .map((post) => (
+                <BlogCard key={post.id} post={post} />
               ))}
           </animated.div>
         ))}
       </div>
       <div className="flex items-center justify-center gap-4 mt-auto mb-10">
         <button
-          className="text-black h-12 flex justify-center items-center w-12 rounded-full bg-white disabled:bg-[#1F1F1F] disabled:text-white"
+          className="text-black h-8 flex justify-center items-center w-8 rounded-full bg-white disabled:bg-[#1F1F1F] disabled:text-white"
           onClick={prev}
           disabled={page === 1}
         >
@@ -60,7 +60,7 @@ const SelectedWorks = () => {
           Page {page} of {totalPages}
         </span>
         <button
-          className="text-black h-12 flex justify-center items-center w-12 rounded-full bg-white disabled:bg-[#1F1F1F] disabled:text-white"
+          className="text-black h-8 flex justify-center items-center w-8 rounded-full bg-white disabled:bg-[#1F1F1F] disabled:text-white"
           onClick={next}
           disabled={page === totalPages}
         >
@@ -71,4 +71,4 @@ const SelectedWorks = () => {
   );
 };
 
-export default SelectedWorks;
+export default Blog;

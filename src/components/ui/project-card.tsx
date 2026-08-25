@@ -1,12 +1,18 @@
 import { Project } from "../../utils/types";
+import Icon from "./icon";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="text-white bg-dark px-4 pt-4 pb-6 rounded-[20px] shadow-md">
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noreferrer"
+      className="text-white bg-dark px-4 pt-4 pb-6 rounded-[20px] shadow-md block"
+    >
       <img
         src={project.image}
-        className="max-h-60 h-full w-full object-cover"
-        alt="blog"
+        className="max-h-80 h-full w-full object-cover"
+        alt={project.title}
       />
       <div className="space-y-4 my-3">
         <h2 className="text-center text-white/80 font-bold">{project.title}</h2>
@@ -21,7 +27,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </li>
         ))}
       </ul>
-    </div>
+      <span className="flex justify-center items-center gap-2 text-white font-black text-sm mt-4">
+        Visit site
+        <Icon icon="fluent:arrow-right" height={14} width={14} />
+      </span>
+    </a>
   );
 };
 

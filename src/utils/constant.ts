@@ -6,6 +6,8 @@ import Linkedin from "../../public/assets/icons/linkedin.svg?react";
 import Mail from "../../public/assets/icons/mail.svg?react";
 import LocationMarker from "../../public/assets/icons/location-marker.svg?react";
 import Phone from "../../public/assets/icons/phone.svg?react";
+import { Project } from "./types";
+
 export const tools = [
   {
     name: "html",
@@ -35,11 +37,27 @@ export const tools = [
     name: "jquery",
     url: "/assets/tools/jquery.svg",
   },
+  {
+    name: "nextjs",
+    url: "/assets/tools/nextjs.svg",
+  },
+  {
+    name: "vuejs",
+    url: "/assets/tools/vuejs.svg",
+  },
+  {
+    name: "angularjs",
+    url: "/assets/tools/angularjs.svg",
+  },
+  {
+    name: "react-native",
+    url: "/assets/tools/react-native.svg",
+  },
 ];
 export const contactInfo = [
   {
     icon: Github,
-    url: "https://github.com/olawalecodes",
+    url: "https://github.com/iwa-temmy",
     label: "iwa-temmy",
     type: "github",
   },
@@ -51,7 +69,7 @@ export const contactInfo = [
   },
   {
     icon: Linkedin,
-    url: "https://www.linkedin.com/in/olawale-iwaloye/",
+    url: "https://www.linkedin.com/in/olawale-iwaloye-26b80314b/",
     label: "Olawale Iwaloye",
     type: "linkedin",
   },
@@ -75,69 +93,98 @@ export const contactInfo = [
   },
 ];
 
-export const projects = [
+export const projects: Project[] = [
   {
     id: 1,
-    title: "Smartcomply website",
+    title: "SmartComply",
     image: "/assets/placeholder.png",
     description:
-      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
-    tools: ["Next JS", "Tailwind", "Framer motion"],
+      "SmartComply is a solution that helps payment card industry organizations in attaining their compliance in a short duration of time.",
+    tools: ["React JS", "Sass", "Material UI", "React Redux"],
+    url: "https://app.smartcomply.com/auth/login",
   },
   {
     id: 2,
-    title: "Smartcomply website",
+    title: "Wired Assurance Website",
     image: "/assets/placeholder.png",
     description:
+      "The official website of the Wired Assurance, a software vulnerability testing service that helps to ensure security in applications.",
+    tools: ["React JS", "Sass", "Framer Motion", "Vite"],
+    url: "http://wiredassurance.com/",
+  },
+  {
+    id: 3,
+    title: "Smartcomply Website",
+    image: "/assets/placeholder.png",
+    description:
+      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies.",
+    tools: ["React JS", "Tailwind CSS", "Framer Motion", "Vite"],
+    url: "http://smartcomplyapp.com/",
+  },
+  {
+    id: 4,
+    title: "Oyo State Health Insurance Self Service Portal",
+    image: "/assets/placeholder.png",
+    description:
+      "The official website of the Oyo State Health Insurance Application, aimed at managing health insurance services and providing information related to health insurance in Oyo State, Nigeria.",
+    tools: ["Next JS", "Tailwind CSS", "RTK Query"],
+    url: "https://self-service.oyshia.oy.gov.ng/login",
+  },
+  {
+    id: 5,
+    title: "Fuseerp Website",
+    image: "/assets/placeholder.png",
+    description:
+      "The official website of the Fuse ERP software that gives potential clients insights about the features of the application.",
+    tools: ["React JS", "Sass", "Animate CSS"],
+    url: "http://fuseerp.com/",
+  },
+  {
+    id: 6,
+    title: "Radease",
+    image: "/assets/placeholder.png",
+    description:
+      "Radease, a healthcare company based in Nigeria, is driven by a profound vision to bring about transformative changes within the industry.",
+    tools: ["React JS", "Sass", "Vite", "Tailwind CSS", "Framer Motion"],
+    url: "https://radease.com",
+  },
+];
+
+export const blogs = [
+  {
+    id: 1,
+    image: "/assets/placeholder.png",
+    date: "Aug 24, 2023",
+    title: "Smart comply website",
+    description:
       "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
-    tools: ["Next JS", "Tailwind", "Framer motion"],
+    url: "#",
+  },
+  {
+    id: 2,
+    image: "/assets/placeholder.png",
+    date: "Aug 24, 2023",
+    title: "Smart comply website",
+    description:
+      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+    url: "#",
   },
   {
     id: 3,
     image: "/assets/placeholder.png",
-    title: "Now Smartcomply website",
+    date: "Aug 24, 2023",
+    title: "Smart comply website",
     description:
       "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
-    tools: ["Next JS", "Tailwind", "Framer motion"],
+    url: "#",
   },
   {
     id: 4,
     image: "/assets/placeholder.png",
-    title: "Not Smartcomply website",
+    date: "Aug 24, 2023",
+    title: "Smart comply website",
     description:
       "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
-    tools: ["Next JS", "Tailwind", "Framer motion"],
-  },
-  {
-    id: 5,
-    image: "/assets/placeholder.png",
-    title: "Yay Smartcomply website",
-    description:
-      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
-    tools: ["Next JS", "Tailwind", "Framer motion"],
-  },
-  {
-    id: 6,
-    image: "/assets/placeholder.png",
-    title: "Ni Smartcomply website",
-    description:
-      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
-    tools: ["Next JS", "Tailwind", "Framer motion"],
-  },
-  {
-    id: 7,
-    image: "/assets/placeholder.png",
-    title: "Han Smartcomply website",
-    description:
-      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
-    tools: ["Next JS", "Tailwind", "Framer motion"],
-  },
-  {
-    id: 8,
-    image: "/assets/placeholder.png",
-    title: "Dan Smartcomply website",
-    description:
-      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
-    tools: ["Next JS", "Tailwind", "Framer motion"],
+    url: "#",
   },
 ];
