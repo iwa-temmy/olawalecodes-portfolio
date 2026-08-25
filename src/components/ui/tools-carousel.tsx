@@ -1,46 +1,54 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { tools } from "../../utils/constant";
 
 const VISIBLE_COUNT = 7;
-
-const StackSlot = ({ slotIndex }: { slotIndex: number }) => {
-  const [index, setIndex] = useState(slotIndex % tools.length);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % tools.length);
-    }, 2400 + slotIndex * 350);
-    return () => clearInterval(interval);
-  }, [slotIndex]);
-
-  const front = tools[index];
-  const back = tools[(index + 1) % tools.length];
-
-  return (
-    <div className="relative w-7 h-7">
-      <img
-        key={`back-${back.name}`}
-        src={back.url}
-        alt=""
-        aria-hidden="true"
-        className="stack-back absolute inset-0 w-7 h-7 object-contain"
-      />
-      <img
-        key={`front-${front.name}`}
-        src={front.url}
-        alt={front.name}
-        className="stack-front absolute inset-0 w-7 h-7 object-contain"
-      />
-    </div>
-  );
-};
+const ROTATION_MS = 1800;
 
 const ToolsCarousel = () => {
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setOffset((previous) => (previous + 1) % tools.length);
+    }, ROTATION_MS);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const visibleTools = useMemo(() => {
+    const selected: typeof tools = [];
+    let cursor = offset;
+
+    while (selected.length < VISIBLE_COUNT) {
+      const tool = tools[cursor % tools.length];
+
+      if (!selected.some((item) => item.name === tool.name)) {
+        selected.push(tool);
+      }
+
+      cursor += 1;
+    }
+
+    return selected;
+  }, [offset]);
+
   return (
-    <div className="flex gap-4 md:gap-6">
-      {Array.from({ length: VISIBLE_COUNT }).map((_, i) => (
-        <StackSlot key={i} slotIndex={i} />
-      ))}
+    <div className="relative overflow-hidden">
+      <div className="flex items-center gap-4 md:gap-6">
+        {visibleTools.map((tool, index) => (
+          <div
+            key={`${tool.name}-${index}`}
+            className="flex h-7 w-7 shrink-0 items-center justify-center opacity-0 animate-[toolFade_500ms_ease-out_forwards] md:h-8 md:w-8"
+            style={{ animationDelay: `${index * 90}ms` }}
+          >
+            <img
+              src={tool.url}
+              alt={tool.name}
+              className="h-full w-full object-contain opacity-80 transition-all duration-300 hover:opacity-100"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -5,11 +5,11 @@ const BlogCard = ({ post }: { post: BlogPost }) => {
   return (
     <a
       href={post.url}
-      className="text-white bg-dark p-4 rounded-[20px] shadow-md flex gap-4"
+      className="text-white bg-dark p-4 rounded-[20px] shadow-md flex flex-col md:flex-row gap-4"
     >
       <img
         src={post.image}
-        className="w-32 h-32 md:w-40 md:h-40 shrink-0 object-cover rounded-2xl"
+        className="w-full max-h-40 md:w-40 md:h-40 shrink-0 object-cover rounded-2xl"
         alt={post.title}
       />
       <div className="flex flex-col">

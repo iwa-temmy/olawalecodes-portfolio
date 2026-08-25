@@ -31,7 +31,7 @@ header {
 }
 
 .about {
-  @apply h-screen bg-[url("/assets/about-image.png")] container px-4 pt-28 bg-no-repeat bg-contain bg-bottom md:px-0 md:bg-right-bottom md:pt-20;
+  @apply h-screen bg-[url("/assets/about-image.png")] container px-4 pt-4 bg-no-repeat bg-contain bg-bottom md:px-0 md:pl-16 md:bg-right-bottom md:pt-20;
   scroll-snap-align: start;
 }
 
@@ -41,12 +41,12 @@ header {
 }
 
 .selected-works {
-  @apply container pt-40 h-screen flex flex-col;
+  @apply container pt-20 md:pt-40 h-screen flex flex-col;
   scroll-snap-align: start;
 }
 
 .blog {
-  @apply container pt-40 h-screen flex flex-col;
+  @apply container pt-20 md:pt-40 h-screen flex flex-col;
   scroll-snap-align: start;
 }
 
@@ -92,6 +92,17 @@ header {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes toolFade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 

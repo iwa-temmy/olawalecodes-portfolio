@@ -1,15 +1,25 @@
+import { useEffect, useState } from "react";
 import { useTransition, animated } from "@react-spring/web";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlogCard from "./ui/blog-card";
 import { blogs } from "../utils/constant";
 import { usePagination } from "../utils/use-pagination";
 
-const PER_PAGE = 2;
+const getPerPage = () => (window.innerWidth < 768 ? 1 : 2);
 
 const Blog = () => {
+  const [perPage, setPerPage] = useState(getPerPage);
+
+  useEffect(() => {
+    const handleResize = () => setPerPage(getPerPage());
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const { page, totalPages, direction, next, prev } = usePagination(
     blogs.length,
-    PER_PAGE
+    perPage
   );
 
   const transitions = useTransition(page, {
@@ -41,7 +51,7 @@ const Blog = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
           >
             {blogs
-              .slice((item - 1) * PER_PAGE, item * PER_PAGE)
+              .slice((item - 1) * perPage, item * perPage)
               .map((post) => (
                 <BlogCard key={post.id} post={post} />
               ))}

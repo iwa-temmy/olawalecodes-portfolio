@@ -1,15 +1,25 @@
+import { useEffect, useState } from "react";
 import { useTransition, animated } from "@react-spring/web";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import ProjectCard from "./ui/project-card";
 import { projects } from "../utils/constant";
 import { usePagination } from "../utils/use-pagination";
 
-const PER_PAGE = 2;
+const getPerPage = () => (window.innerWidth < 768 ? 1 : 2);
 
 const SelectedWorks = () => {
+  const [perPage, setPerPage] = useState(getPerPage);
+
+  useEffect(() => {
+    const handleResize = () => setPerPage(getPerPage());
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const { page, totalPages, direction, next, prev } = usePagination(
     projects.length,
-    PER_PAGE
+    perPage
   );
 
   const transitions = useTransition(page, {
@@ -41,14 +51,14 @@ const SelectedWorks = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
           >
             {projects
-              .slice((item - 1) * PER_PAGE, item * PER_PAGE)
+              .slice((item - 1) * perPage, item * perPage)
               .map((project) => (
                 <ProjectCard key={project.id} project={project} />
               ))}
           </animated.div>
         ))}
       </div>
-      <div className="flex items-center justify-center gap-4 mt-auto mb-10">
+      <div className="flex items-center justify-center gap-4 mt-auto pb-10">
         <button
           className="text-black h-12 flex justify-center items-center w-12 rounded-full bg-white disabled:bg-[#1F1F1F] disabled:text-white"
           onClick={prev}
