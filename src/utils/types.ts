@@ -5,6 +5,7 @@ export interface Project {
   description: string;
   tools: string[];
   url: string;
+  year: string;
 }
 
 export interface BlogPost {

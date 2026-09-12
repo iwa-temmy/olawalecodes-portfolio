@@ -2,12 +2,15 @@ import Hero from "./components/hero";
 import About from "./components/about";
 import NavBar from "./components/ui/navbar";
 import "./App.css";
-import Contact from "./components/contact";
+import Footer from "./components/footer";
 import SelectedWorks from "./components/selected-works";
 import Blog from "./components/blog";
 import Seo from "./components/seo";
+import { useLenis } from "./utils/use-lenis";
 
 function App() {
+  useLenis();
+
   return (
     <>
       <div className="">
@@ -17,7 +20,7 @@ function App() {
         <About />
         <SelectedWorks />
         <Blog />
-        <Contact />
+        <Footer />
       </div>
     </>
   );

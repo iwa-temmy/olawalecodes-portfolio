@@ -1,9 +1,15 @@
 import { tools } from "../utils/constant";
+import { useScrollReveal } from "../utils/use-scroll-reveal";
 
 const About = () => {
+  const contentRef = useScrollReveal<HTMLDivElement>({ y: 40, stagger: 0.15 });
+
   return (
     <section className="about" id="about">
-      <div className="flex flex-col justify-start h-full w-full md:w-2/5 pt-20 md:pt-40">
+      <div
+        ref={contentRef}
+        className="flex flex-col justify-start h-full w-full md:w-2/5 pt-20 md:pt-40"
+      >
         <h4 className="text-white text-sm font-black mb-4 md:text-3xl">About me</h4>
         <p className="text-[#ffffff60] text-lg leading-7 md:text-2xl md:leading-[34px]">
           I'm Olawale Iwaloye, but you can call me Olawalecodes — a

@@ -1,81 +1,29 @@
-import { useEffect, useState } from "react";
-import { useTransition, animated } from "@react-spring/web";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import ProjectCard from "./ui/project-card";
 import { projects } from "../utils/constant";
-import { usePagination } from "../utils/use-pagination";
-
-const getPerPage = () => (window.innerWidth < 768 ? 1 : 2);
+import { useScrollReveal } from "../utils/use-scroll-reveal";
 
 const SelectedWorks = () => {
-  const [perPage, setPerPage] = useState(getPerPage);
-
-  useEffect(() => {
-    const handleResize = () => setPerPage(getPerPage());
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const { page, totalPages, direction, next, prev } = usePagination(
-    projects.length,
-    perPage
-  );
-
-  const transitions = useTransition(page, {
-    key: page,
-    from: { opacity: 0, transform: `translate3d(${direction * 60}%,0,0)` },
-    enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
-    leave: {
-      opacity: 0,
-      transform: `translate3d(${direction * -60}%,0,0)`,
-      position: "absolute",
-    },
-    config: { tension: 280, friction: 32 },
-  });
+  const headerRef = useScrollReveal<HTMLDivElement>({ y: 30, stagger: 0.15 });
+  const gridRef = useScrollReveal<HTMLDivElement>({ y: 50, stagger: 0.15 });
 
   return (
     <section className="selected-works" id="works">
-      <div className="flex flex-col gap-5 items-center pb-4">
-        <h1 className="text-white/30 text-center text-3xl md:text-7xl font-black">
-          Selected works
+      <div
+        ref={headerRef}
+        className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-12 md:pb-16"
+      >
+        <h1 className="text-white text-4xl md:text-7xl font-black uppercase">
+          Projects.
         </h1>
-        <div className="bg-[#212121] h-2 w-44 rounded-3xl">
-          <div className="bg-white w-1/2 h-full rounded-3xl" />
-        </div>
+        <p className="text-white/50 max-w-xs md:text-right">
+          I've worked with founders, startups and teams to ship products that
+          people actually use.
+        </p>
       </div>
-      <div className="relative overflow-hidden">
-        {transitions((style, item) => (
-          <animated.div
-            style={style}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full"
-          >
-            {projects
-              .slice((item - 1) * perPage, item * perPage)
-              .map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-          </animated.div>
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
-      </div>
-      <div className="flex items-center justify-center gap-4 mt-auto pb-10">
-        <button
-          className="text-black h-12 flex justify-center items-center w-12 rounded-full bg-white disabled:bg-[#1F1F1F] disabled:text-white"
-          onClick={prev}
-          disabled={page === 1}
-        >
-          <ArrowLeft />
-        </button>
-        <span className="text-white text-sm">
-          Page {page} of {totalPages}
-        </span>
-        <button
-          className="text-black h-12 flex justify-center items-center w-12 rounded-full bg-white disabled:bg-[#1F1F1F] disabled:text-white"
-          onClick={next}
-          disabled={page === totalPages}
-        >
-          <ArrowRight />
-        </button>
       </div>
     </section>
   );

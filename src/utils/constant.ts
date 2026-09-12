@@ -6,7 +6,7 @@ import Linkedin from "../../public/assets/icons/linkedin.svg?react";
 import Mail from "../../public/assets/icons/mail.svg?react";
 import LocationMarker from "../../public/assets/icons/location-marker.svg?react";
 import Phone from "../../public/assets/icons/phone.svg?react";
-import { Project } from "./types";
+import { BlogPost, Project } from "./types";
 
 export const tools = [
   {
@@ -102,6 +102,7 @@ export const projects: Project[] = [
       "SmartComply is a solution that helps payment card industry organizations in attaining their compliance in a short duration of time.",
     tools: ["React JS", "Sass", "Material UI", "React Redux"],
     url: "https://app.smartcomply.com/auth/login",
+    year: "2023",
   },
   {
     id: 2,
@@ -111,6 +112,7 @@ export const projects: Project[] = [
       "The official website of the Wired Assurance, a software vulnerability testing service that helps to ensure security in applications.",
     tools: ["React JS", "Sass", "Framer Motion", "Vite"],
     url: "http://wiredassurance.com/",
+    year: "2023",
   },
   {
     id: 3,
@@ -120,6 +122,7 @@ export const projects: Project[] = [
       "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies.",
     tools: ["React JS", "Tailwind CSS", "Framer Motion", "Vite"],
     url: "http://smartcomplyapp.com/",
+    year: "2023",
   },
   {
     id: 4,
@@ -129,6 +132,7 @@ export const projects: Project[] = [
       "The official website of the Oyo State Health Insurance Application, aimed at managing health insurance services and providing information related to health insurance in Oyo State, Nigeria.",
     tools: ["Next JS", "Tailwind CSS", "RTK Query"],
     url: "https://self-service.oyshia.oy.gov.ng/login",
+    year: "2024",
   },
   {
     id: 5,
@@ -138,6 +142,7 @@ export const projects: Project[] = [
       "The official website of the Fuse ERP software that gives potential clients insights about the features of the application.",
     tools: ["React JS", "Sass", "Animate CSS"],
     url: "http://fuseerp.com/",
+    year: "2024",
   },
   {
     id: 6,
@@ -147,44 +152,45 @@ export const projects: Project[] = [
       "Radease, a healthcare company based in Nigeria, is driven by a profound vision to bring about transformative changes within the industry.",
     tools: ["React JS", "Sass", "Vite", "Tailwind CSS", "Framer Motion"],
     url: "https://radease.com",
+    year: "2024",
   },
 ];
 
-export const blogs = [
+export const blogs: BlogPost[] = [
   {
     id: 1,
     image: "/assets/placeholder.png",
     date: "Aug 24, 2023",
-    title: "Smart comply website",
+    title: "Building compliant fintech UIs at scale",
     description:
-      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+      "Notes on structuring React design systems for financial products where accessibility and compliance aren't optional.",
     url: "#",
   },
   {
     id: 2,
     image: "/assets/placeholder.png",
-    date: "Aug 24, 2023",
-    title: "Smart comply website",
+    date: "Oct 02, 2023",
+    title: "Why I moved from Sass to Tailwind",
     description:
-      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+      "A practical look at the tradeoffs after shipping the same product with both approaches.",
     url: "#",
   },
   {
     id: 3,
     image: "/assets/placeholder.png",
-    date: "Aug 24, 2023",
-    title: "Smart comply website",
+    date: "Jan 14, 2024",
+    title: "State management without the boilerplate",
     description:
-      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+      "Rethinking Redux-heavy codebases and what actually needs global state.",
     url: "#",
   },
   {
     id: 4,
     image: "/assets/placeholder.png",
-    date: "Aug 24, 2023",
-    title: "Smart comply website",
+    date: "Mar 30, 2024",
+    title: "Shipping faster with Vite and Next.js together",
     description:
-      "The official website of the Smartcomply, the first and number one compliance tech in Africa, aims to attend to compliance needs of financial institutions/card processing companies",
+      "Lessons from maintaining both toolchains across different client projects.",
     url: "#",
   },
 ];

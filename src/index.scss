@@ -5,17 +5,18 @@
 @import url("https://fonts.cdnfonts.com/css/satoshi");
 @import url("https://db.onlinewebfonts.com/c/f38da0f7340f0f57c58f17fdd59be485?family=Axiforma+W05+Bold");
 
+html {
+  @apply overflow-y-scroll;
+}
+
 html,
 body {
-  scroll-snap-type: y mandatory;
   width: 100vw;
-  height: 100vh;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
   box-sizing: border-box;
   font-family: "Satoshi", sans-serif;
-  @apply bg-main-bg bg-left-bottom bg-fixed bg-no-repeat bg-cover overflow-y-scroll;
+  @apply bg-main-bg bg-left-bottom bg-fixed bg-no-repeat bg-cover;
 }
 
 .page-layout {
@@ -27,72 +28,22 @@ header {
 
 .hero {
   @apply md:bg-[url("/assets/hero-image.png")] container h-screen bg-no-repeat bg-right-bottom  flex flex-col justify-center md:justify-start items-center md:items-start pt-40;
-  scroll-snap-align: start;
 }
 
 .about {
   @apply h-screen bg-[url("/assets/about-image.png")] container px-4 pt-4 bg-no-repeat bg-contain bg-bottom md:px-0 md:pl-16 md:bg-right-bottom md:pt-20;
-  scroll-snap-align: start;
-}
-
-.contact {
-  @apply pt-40 container h-screen;
-  scroll-snap-align: start;
 }
 
 .selected-works {
-  @apply container pt-20 md:pt-40 h-screen flex flex-col;
-  scroll-snap-align: start;
+  @apply container py-24 md:py-32;
 }
 
 .blog {
-  @apply container pt-20 md:pt-40 h-screen flex flex-col;
-  scroll-snap-align: start;
+  @apply container py-24 md:py-32;
 }
 
-.stack-front {
-  z-index: 2;
-  animation: stack-front-in 0.5s ease;
-}
-
-.stack-back {
-  z-index: 1;
-  opacity: 0.35;
-  transform: scale(0.75) translate(3px, 3px);
-  animation: stack-back-in 0.5s ease;
-}
-
-@keyframes stack-front-in {
-  0% {
-    transform: scale(0.75) translate(3px, 3px);
-    opacity: 0.35;
-  }
-  100% {
-    transform: scale(1) translate(0, 0);
-    opacity: 1;
-  }
-}
-
-@keyframes stack-back-in {
-  0% {
-    transform: scale(0.55) translate(5px, 5px);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(0.75) translate(3px, 3px);
-    opacity: 0.35;
-  }
-}
-
-@keyframes fade-slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.footer {
+  @apply container py-24 md:py-32;
 }
 
 @keyframes toolFade {
@@ -103,17 +54,5 @@ header {
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
-  }
-}
-
-@supports (animation-timeline: view()) {
-  .hero,
-  .about,
-  .selected-works,
-  .blog,
-  .contact {
-    animation: fade-slide-in linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 30%;
   }
 }
